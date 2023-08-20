@@ -31,13 +31,13 @@ Route::get('/', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::middleware('is_admin')->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.index');
     Route::get('/admin/edit', [AdminController::class, 'editProfile'])->name('admin.edit');
     Route::patch('/admin', [AdminController::class, 'updateProfile'])->name('admin.update');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/edit', [UserController::class, 'editProfile'])->name('user.edit');
     Route::patch('/user', [UserController::class, 'updateProfile'])->name('user.update');

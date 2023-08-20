@@ -12,6 +12,9 @@
 
     <meta name="description" content="" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+
     {{-- Icons --}}
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}">
 
