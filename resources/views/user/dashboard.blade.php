@@ -1,5 +1,5 @@
-@extends('admin.admin_master')
-@section('admin')
+@extends('user.user_master')
+@section('user')
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard /</span> Admin </h4>
@@ -30,19 +30,19 @@
 
         <div class="col-lg-12 col-md-12 order-1">
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-12 mb-4">
+                <div class="col-lg-6 col-md-12 col-12 mb-4">
                     <div class="card text-center">
                         <div class="card-body">
                             <h3 class="fw-bold">Ruangan</h3>
                             <div class="card-title">
                                 <img src="{{ asset('assets/img/icons/ruangan.png') }}" alt="Ruangan Icon">
                             </div>
-                            <span><a href="{{ route('admin.ruangan') }}" class="btn btn-primary">Details<i
+                            <span><a href="{{ route('user.ruangan') }}" class="btn btn-primary">Details<i
                                         class='bx bx-detail m-1'></i></a></span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 col-12 mb-4">
+                <div class="col-lg-6 col-md-12 col-12 mb-4">
                     <div class="card text-center">
                         <div class="card-body">
                             <h3 class="fw-bold">Jadwal</h3>
@@ -50,18 +50,6 @@
                                 <img src="{{ asset('assets/img/icons/jadwal.png') }}" alt="Ruangan Icon">
                             </div>
                             <span><a href="#" class="btn btn-primary">Details<i class='bx bx-detail m-1'></i></a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-12 mb-4">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <h3 class="fw-bold">Pemohon</h3>
-                            <div class="card-title">
-                                <img src="{{ asset('assets/img/icons/pemohon.png') }}" alt="Ruangan Icon">
-                            </div>
-                            <span><a href="{{ route('admin.pemohon') }}" class="btn btn-primary">Details<i
-                                        class='bx bx-detail m-1'></i></a></span>
                         </div>
                     </div>
                 </div>

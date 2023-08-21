@@ -33,4 +33,29 @@ class AdminController extends Controller
 
         return Redirect::route('admin.edit')->with('status', 'profile-updated');
     }
+
+    public function ruangan()
+    {
+        return view('admin.ruangan.ruangan');
+    }
+
+    public function addRuangan()
+    {
+        return view('admin.ruangan.add_ruangan');
+    }
+
+    public function editRuangan()
+    {
+        return view('admin.ruangan.edit_ruangan');
+    }
+
+    public function pemohon()
+    {
+        return view('admin.pemohon.pemohon');
+    }
+
+    public function peminjaman()
+    {
+        return view('admin.peminjaman.peminjaman');
+    }
 }

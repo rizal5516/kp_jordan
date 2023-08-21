@@ -34,12 +34,12 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="layouts-without-menu.html" class="menu-link">
+                    <a href="{{ route('user.ruangan') }}" class="menu-link">
                         <div data-i18n="Without menu">Daftar Ruangan</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="layouts-without-navbar.html" class="menu-link">
+                    <a href="{{ route('ruangan.add') }}" class="menu-link">
                         <div data-i18n="Without navbar">Tambah Ruangan</div>
                     </a>
                 </li>
@@ -54,16 +54,16 @@
         </li>
 
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="Basic">Pemohon</div>
+            <a href="{{ route('user.peminjaman') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Peminjaman</div>
             </a>
         </li>
 
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Peminjaman</div>
+            <a href="{{ route('user.status-peminjaman') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-stats"></i>
+                <div data-i18n="Basic">Status Peminjaman</div>
             </a>
         </li>
 

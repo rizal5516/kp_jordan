@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
-    public function index()
+    public function dashboard()
     {
-        return view('user.user_master');
+        return view('user.dashboard');
     }
 
     public function editProfile(Request $request)
@@ -31,5 +31,30 @@ class UserController extends Controller
         $request->user()->save();
 
         return Redirect::route('user.edit')->with('status', 'profile-updated');
+    }
+
+    public function ruangan()
+    {
+        return view('user.ruangan.ruangan');
+    }
+
+    public function addRuangan()
+    {
+        return view('user.ruangan.add_ruangan');
+    }
+
+    public function editRuangan()
+    {
+        return view('user.ruangan.edit_ruangan');
+    }
+
+    public function peminjaman()
+    {
+        return view('user.peminjaman.peminjaman');
+    }
+
+    public function statusPeminjaman()
+    {
+        return view('user.peminjaman.status_peminjaman');
     }
 }
