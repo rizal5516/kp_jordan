@@ -11,7 +11,7 @@
                 <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
                 <div class="card-body">
                     <h5 class="card-title">A101</h5>
-                    <a href="{{ route('ruangan.edit') }}" class="btn btn-outline-info"><i
+                    <a href="{{ route('user.ruangan-edit') }}" class="btn btn-outline-info"><i
                             class='bx bx-edit-alt'></i></a>
                     <a href="#" class="btn btn-outline-danger"><i class='bx bx-trash'></i></a>
                 </div>

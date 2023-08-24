@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Support\Facades\Redirect;
 
-
 class AdminController extends Controller
 {
     public function dashboard()
@@ -32,21 +31,6 @@ class AdminController extends Controller
         $request->user()->save();
 
         return Redirect::route('admin.edit')->with('status', 'profile-updated');
-    }
-
-    public function ruangan()
-    {
-        return view('admin.ruangan.ruangan');
-    }
-
-    public function addRuangan()
-    {
-        return view('admin.ruangan.add_ruangan');
-    }
-
-    public function editRuangan()
-    {
-        return view('admin.ruangan.edit_ruangan');
     }
 
     public function pemohon()
