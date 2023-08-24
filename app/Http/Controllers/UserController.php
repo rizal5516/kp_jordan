@@ -33,21 +33,6 @@ class UserController extends Controller
         return Redirect::route('user.edit')->with('status', 'profile-updated');
     }
 
-    public function ruangan()
-    {
-        return view('user.ruangan.ruangan');
-    }
-
-    public function addRuangan()
-    {
-        return view('user.ruangan.add_ruangan');
-    }
-
-    public function editRuangan()
-    {
-        return view('user.ruangan.edit_ruangan');
-    }
-
     public function peminjaman()
     {
         return view('user.peminjaman.peminjaman');

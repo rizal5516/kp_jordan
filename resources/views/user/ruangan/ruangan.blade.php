@@ -6,37 +6,19 @@
 
     <!-- Examples -->
     <div class="row mb-5">
+        @foreach ($ruangans as $ruangan)
         <div class="col-md-6 col-lg-4 mb-3">
             <div class="card h-100">
-                <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                <img class="card-img-top" src="{{ asset('assets/upload/'.$ruangan->image_ruangan) }}"
+                    alt="Image Ruangan" />
                 <div class="card-body">
-                    <h5 class="card-title">A101</h5>
-                    <a href="{{ route('user.ruangan-edit') }}" class="btn btn-outline-info"><i
-                            class='bx bx-edit-alt'></i></a>
-                    <a href="#" class="btn btn-outline-danger"><i class='bx bx-trash'></i></a>
+                    <h5 class="card-title">{{ $ruangan->nama_ruangan }}</h5>
+                    <a href="{{ route('user.detail-ruangan', $ruangan->id) }}" class="btn btn-outline-warning"><i
+                            class='bx bx-detail'></i></a>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                <div class="card-body">
-                    <h5 class="card-title">A102</h5>
-                    <a href="#" class="btn btn-outline-info"><i class='bx bx-edit-alt'></i></a>
-                    <a href="#" class="btn btn-outline-danger"><i class='bx bx-trash'></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                <div class="card-body">
-                    <h5 class="card-title">Lab Multimedia</h5>
-                    <a href="#" class="btn btn-outline-info"><i class='bx bx-edit-alt'></i></a>
-                    <a href="#" class="btn btn-outline-danger"><i class='bx bx-trash'></i></a>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
     <!-- Examples -->
 </div>

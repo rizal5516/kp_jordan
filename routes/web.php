@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminRuanganController;
+use App\Http\Controllers\UserRuanganController;
 
 
 /*
@@ -52,10 +53,8 @@ Route::middleware(['auth'])->prefix('/user')->group(function () {
     Route::get('/', [UserController::class, 'dashboard'])->name('user.index');
     Route::get('/edit', [UserController::class, 'editProfile'])->name('user.edit');
     Route::patch('/', [UserController::class, 'updateProfile'])->name('user.update');
-    Route::get('/ruangan', [UserController::class, 'ruangan'])->name('user.ruangan');
-    Route::get('/user/add-ruangan', [UserController::class, 'addRuangan'])->name('user.ruangan-add');
-    Route::get('/user/store-ruangan', [UserController::class, 'storeRuangan'])->name('user.ruangan-store');
-    Route::get('/user/edit-ruangan', [UserController::class, 'editRuangan'])->name('user.ruangan-edit');
+    Route::get('/ruangan', [UserRuanganController::class, 'ruangan'])->name('user.ruangan');
+    Route::get('/detail-ruangan/{id}', [UserRuanganController::class, 'detailRuangan'])->name('user.detail-ruangan');
     Route::get('/peminjaman', [UserController::class, 'peminjaman'])->name('user.peminjaman');
     Route::get('/status-peminjaman', [UserController::class, 'statusPeminjaman'])->name('user.status-peminjaman');
 });

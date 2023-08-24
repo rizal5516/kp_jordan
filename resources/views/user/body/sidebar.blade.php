@@ -38,11 +38,6 @@
                         <div data-i18n="Without menu">Daftar Ruangan</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="{{ route('user.ruangan-add') }}" class="menu-link">
-                        <div data-i18n="Without navbar">Tambah Ruangan</div>
-                    </a>
-                </li>
             </ul>
         </li>
 
