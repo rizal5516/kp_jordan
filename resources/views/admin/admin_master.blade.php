@@ -33,6 +33,7 @@
     {{-- Vendor CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/toastr.min.css') }}">
 
     {{-- Helpers --}}
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
@@ -66,6 +67,7 @@
     <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}">
     </script>
+    <script src="{{ asset('assets/vendor/js/toastr.min.js') }}"></script>
 
     <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->

@@ -61,6 +61,8 @@ class AdminRuanganController extends Controller
             'image_ruangan' => $imageName,
         ]);
 
+        toastr()->success('Ruangan Berhasil di Tambah');
+
         return Redirect::route('admin.ruangan');
     }
 
@@ -137,6 +139,8 @@ class AdminRuanganController extends Controller
             ]);
         }
 
+        toastr()->success('Data Ruangan Berhasil di Update');
+
         return Redirect::route('admin.ruangan');
     }
 
@@ -156,6 +160,8 @@ class AdminRuanganController extends Controller
         }
 
         $ruangan->delete();
+
+        toastr()->success('Data Ruangan Berhasil di Hapus');
 
         return Redirect::back();
     }

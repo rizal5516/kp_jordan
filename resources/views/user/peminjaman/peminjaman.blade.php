@@ -11,7 +11,8 @@
                     <h5 class="mb-0">Tambah Peminjam</h5>
                 </div>
                 <div class="card-body">
-                    <form method="" action="" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('user.store-peminjaman') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="mb-3">
                             <label class="form-label" for="nama">Nama Lengkap</label>
                             <input type="text" class="form-control" id="nama" name="nama" />
@@ -25,10 +26,11 @@
                             <input type="text" class="form-control" id="keperluan" name="keperluan" />
                         </div>
                         <div class="mb-3">
-                            <label for="pilih_ruangan" class="form-label">Pilih Ruangan</label>
-                            <select id="pilih_ruangan" name="pilih_ruangan" class="form-select">
-                                <option value="1">A101</option>
-                                <option value="2">A102</option>
+                            <label for="ruangan_id" class="form-label">Pilih Ruangan</label>
+                            <select id="ruangan_id" name="ruangan_id" class="form-select">
+                                @foreach ($ruanganData as $ruangan)
+                                <option value="{{ $ruangan->id }}">{{ $ruangan->nama_ruangan }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="mb-3">

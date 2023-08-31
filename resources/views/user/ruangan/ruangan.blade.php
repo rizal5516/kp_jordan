@@ -9,8 +9,12 @@
         @foreach ($ruangans as $ruangan)
         <div class="col-md-6 col-lg-4 mb-3">
             <div class="card h-100">
+                @if ($ruangan->image_ruangan)
                 <img class="card-img-top" src="{{ asset('assets/upload/'.$ruangan->image_ruangan) }}"
-                    alt="Image Ruangan" />
+                    alt="Ruangan Image" />
+                @else
+                <img class="card-img-top" src="{{ asset('assets/upload/no_image.jpg') }}" alt="No Image" />
+                @endif
                 <div class="card-body">
                     <h5 class="card-title">{{ $ruangan->nama_ruangan }}</h5>
                     <a href="{{ route('user.detail-ruangan', $ruangan->id) }}" class="btn btn-outline-warning"><i

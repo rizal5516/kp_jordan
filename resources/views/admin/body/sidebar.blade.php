@@ -1,5 +1,9 @@
-<!-- Menu -->
+<?php
+// Mendapatkan alamat URL saat ini
+$currentUrl = url()->current();
+?>
 
+<!-- Menu -->
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="{{ route('admin.index') }}" class="app-brand-link">
@@ -19,26 +23,27 @@
 
     <ul class="menu-inner py-4">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item {{ $currentUrl == route('admin.index') ? 'active' : '' }}">
             <a href="{{ route('admin.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-dashboard"></i>
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
 
-        <li class="menu-item">
+        <li
+            class="menu-item {{ $currentUrl == route('admin.ruangan') || $currentUrl == route('admin.ruangan-add') ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-home"></i>
                 <div data-i18n="ruangan">Ruangan</div>
             </a>
 
             <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item {{ $currentUrl == route('admin.ruangan') ? 'active' : '' }}">
                     <a href="{{ route('admin.ruangan') }}" class="menu-link">
                         <div data-i18n="Without menu">Daftar Ruangan</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{ $currentUrl == route('admin.ruangan-add') ? 'active' : '' }}">
                     <a href="{{ route('admin.ruangan-add') }}" class="menu-link">
                         <div data-i18n="Without navbar">Tambah Ruangan</div>
                     </a>
@@ -47,20 +52,20 @@
         </li>
 
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
+            <a href="#" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-calendar"></i>
                 <div data-i18n="Basic">jadwal</div>
             </a>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item {{ $currentUrl == route('admin.pemohon') ? 'active' : '' }}">
             <a href="{{ route('admin.pemohon') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-group"></i>
                 <div data-i18n="Basic">Pemohon</div>
             </a>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item {{ $currentUrl == route('admin.peminjaman') ? 'active' : '' }}">
             <a href="{{ route('admin.peminjaman') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Peminjaman</div>

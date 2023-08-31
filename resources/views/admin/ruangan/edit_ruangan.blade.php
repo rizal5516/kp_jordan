@@ -23,7 +23,8 @@
                         <div class="mb-3">
                             <label for="jenis_ruangan" class="form-label">Jenis Ruangan</label>
                             <select id="jenis_ruangan" name="jenis_ruangan" class="form-select">
-                                <option value="{{ $ruangan->jenis_ruangan }}">{{ $ruangan->jenis_ruangan }}</option>
+                                <option value="{{ $ruangan->jenis_ruangan }}">Current Class Type : {{
+                                    $ruangan->jenis_ruangan }}</option>
                                 <option value="Ruang Kelas">Ruang Kelas</option>
                                 <option value="Ruang Laboratorium">Ruang Laboratorium</option>
                             </select>

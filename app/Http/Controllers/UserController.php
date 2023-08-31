@@ -30,16 +30,8 @@ class UserController extends Controller
 
         $request->user()->save();
 
+        toastr()->success('Data Berhasil di Update');
+
         return Redirect::route('user.edit')->with('status', 'profile-updated');
-    }
-
-    public function peminjaman()
-    {
-        return view('user.peminjaman.peminjaman');
-    }
-
-    public function statusPeminjaman()
-    {
-        return view('user.peminjaman.status_peminjaman');
     }
 }

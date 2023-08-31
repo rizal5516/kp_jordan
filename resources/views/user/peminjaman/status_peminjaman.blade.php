@@ -22,18 +22,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data_peminjaman as $item)
                         <tr>
                             <td>
-                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong>
+                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->id }}</strong>
                             </td>
-                            <td>Jordanoid</td>
-                            <td>21120120140140</td>
-                            <td>Acara Angkatan</td>
-                            <td>A101</td>
-                            <td>09:00</td>
-                            <td>15:00</td>
-                            <td><span class="badge bg-label-warning me-1">Pending</span></td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nim }}</td>
+                            <td>{{ $item->keperluan }}</td>
+                            <td>{{ $item['ruangan']['nama_ruangan'] }}</td>
+                            <td>{{ $item->jam_mulai }}</td>
+                            <td>{{ $item->jam_selesai }}</td>
+                            <td>
+                                @if ($item->status == '1')
+                                <span class="badge bg-label-success me-1">Approved</span>
+                                @else
+                                <span class="badge bg-label-warning me-1">Pending</span>
+                                @endif
+                            </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

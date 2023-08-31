@@ -23,26 +23,40 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data_peminjaman as $item)
+                        @if ($item->status == '0')
                         <tr>
                             <td>
-                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong>
+                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->id }}</strong>
                             </td>
-                            <td>Jordanoid</td>
-                            <td>21120120140140</td>
-                            <td>Acara Angkatan</td>
-                            <td>A101</td>
-                            <td>09:00</td>
-                            <td>15:00</td>
-                            <td><span class="badge bg-label-warning me-1">Pending</span></td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nim }}</td>
+                            <td>{{ $item->keperluan }}</td>
+                            <td>{{ $item->ruangan->nama_ruangan }}</td>
+                            <td>{{ $item->jam_mulai }}</td>
+                            <td>{{ $item->jam_selesai }}</td>
                             <td>
-                                <a class="btn btn-outline-success" href="javascript:void(0);"><i
+                                @if ($item->status == '0')
+                                <span class="badge bg-label-warning me-1">Pending</span>
+                                @elseif ($item->status == '1')
+                                <span class="badge bg-label-success me-1">Approved</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($item->status == '0')
+                                <a class="btn btn-outline-success"
+                                    href="{{ route('admin.approve-peminjaman', $item->id ) }}"><i
                                         class='bx bx-check-circle'></i>
                                 </a>
-                                <a class="btn btn-outline-danger" href="javascript:void(0);"><i
+                                <a class="btn btn-outline-danger"
+                                    href="{{ route('admin.delete-peminjaman', $item->id) }}"><i
                                         class='bx bx-x-circle'></i>
                                 </a>
+                                @endif
                             </td>
                         </tr>
+                        @endif
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -71,18 +85,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data_peminjaman as $item)
+                        @if ($item->status == '1')
                         <tr>
                             <td>
-                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>1</strong>
+                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $item->id }}</strong>
                             </td>
-                            <td>Jordanoid</td>
-                            <td>21120120140140</td>
-                            <td>Acara Angkatan</td>
-                            <td>A101</td>
-                            <td>09:00</td>
-                            <td>15:00</td>
-                            <td><span class="badge bg-label-success me-1">Approve</span></td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nim }}</td>
+                            <td>{{ $item->keperluan }}</td>
+                            <td>{{ $item['ruangan']['nama_ruangan'] }}</td>
+                            <td>{{ $item->jam_mulai }}</td>
+                            <td>{{ $item->jam_selesai }}</td>
+                            <td><span class="badge bg-label-success me-1">Approved</span></td>
                         </tr>
+                        @endif
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -30,16 +30,8 @@ class AdminController extends Controller
 
         $request->user()->save();
 
+        toastr()->success('Data Berhasil di Update');
+
         return Redirect::route('admin.edit')->with('status', 'profile-updated');
-    }
-
-    public function pemohon()
-    {
-        return view('admin.pemohon.pemohon');
-    }
-
-    public function peminjaman()
-    {
-        return view('admin.peminjaman.peminjaman');
     }
 }
